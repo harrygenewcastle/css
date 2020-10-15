@@ -1,0 +1,326 @@
+/*Set the font and max-width and min-width for the main content. 
+Margin:auto is set to make page always horizontal center in the middle;
+Top 35px to avoid overlaping with the navigationbar.
+*/
+
+body{
+  font-family:"Palatino Linotype";
+  top:30px;
+  position: relative;
+  max-width: 960px;
+  min-width: 510px;
+  margin: auto;
+}
+
+/*Set the color when the mouse overing on the link*/
+a:hover{
+  background-color: #00ccff;
+}
+
+/*Set h1 font family,wight and color as the same to the specificaation(contain the whole picture).
+Add the sign language background image to the right without repeat. */
+h1{
+  padding-left: 5px;
+  margin-bottom:-5px;
+  margin-top:10px;
+  padding-bottom: 37px;
+  padding-top: 15px;
+  font-family:"Lucida Sans Unicode";
+  font-weight: bold;
+  color: #366590;/*Using the color picker to find the exact correct hexadecimal of the head 
+  (same to navigation bar background) color with picture uploaded. 
+  Website:https://imagecolorpicker.com/en/;*/
+  background-image:url(http://homepages.cs.ncl.ac.uk/harold.fellermann/csc8004/css/sign_language.png);
+  background-repeat: no-repeat;
+  background-position: 98%;
+}
+
+/*Set the font family,wight and color as the same to the specificaation.*/
+h2,h3{ 
+  font-family:"Lucida Sans Unicode";
+  font-weight: bold;
+  color: #366590;
+}
+
+
+/*remove the bullets for the list*/
+ul{
+  list-style:none;
+}
+
+/*Set the horizontal navigation bar and aligns the flex items at the end (right).
+Remove the list marker.Setting the margin and padding for better layout. 
+Flex is not working in CSS 2.1 which is actually eaiser so set as comments.
+
+.topnav{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  background-color: #004b83;
+  margin: 0;
+  padding: 15px;
+}
+*/
+
+/*Set the background color of the nav bar and make the test align right.(This would resolve the issue of lists order reverse 
+if using float right method.Reference:https://stackoverflow.com/questions/4224476/floatright-reverses-order-of-spans.). Set the margin to 0*/
+.topnav{
+  background-color: #004b83;
+  text-align: right;
+  margin:0;
+}
+/*Set the navigation bar always fixed at the top of the viewport
+and also set the same Max-width to pevent leaking out of the max-width*/
+div.navposition{
+  position: fixed;
+  top:0px;
+  max-width: 960px;
+  width: 100%;
+}
+
+/*To show the nav bar horizontally  and fixed at the top of the viewport. Give some padding to look the same as the picture*/
+.topnav li{
+  display: inline-block; 
+  vertical-align: top;
+  margin:0px;
+  padding:10px 15px 10px 15px;
+
+}
+
+/*Give certain padding to the drop down and by default hide the dropdown menu by display none.*/
+.drop li{
+  display: none;
+  padding-top:5px;
+  padding-bottom:0px;
+  padding-right: 0;
+  padding-left: 0;
+  
+}
+
+/*After mouse hovering to "British Sign Language", the dropdown menu would show up*/
+.drophover:hover .drop li{
+  display: block;
+}
+
+/*Remove the link underline and change the color to white*/
+.topnav a{
+  text-decoration: none;
+  color: #FFFFFF;
+  
+}
+
+
+/*Insert the required seperate line at the bottom of the sections*/
+hr{
+  border:6px solid #004b83;
+  margin: 0;
+}
+
+/*Add the backgroun-image as the border and float right the picture*/
+.imagehistory{
+  margin-right: 10px;
+  margin-left: 10px;
+  padding: 21px;
+  float: right;
+  background-image: url(http://homepages.cs.ncl.ac.uk/harold.fellermann/csc8004/css/420x370-box.png);
+  background-repeat: no-repeat;
+}
+
+
+/*Resolve the junmp link headbutting/padding issue.Reference:https://css-tricks.com/hash-tag-links-padding/*/
+#intro,#history,#linguistics,#bsl,#letters,#numbers{
+	margin-top: -30px;
+  padding-top: 30px;
+
+}
+
+/*Lingustics part---------------------------------------------------------*/
+
+/*Bold the Legend and give the format same as the picture.Padding left with 10px;*/
+p.capitalized{
+  font-variant: small-caps;
+  font-weight: bold;
+  padding-left: 10px;
+}
+
+/*Make the map picture full width of the containing block*/
+.leftimage img{
+ width: 100%;
+}
+
+/*Make the annotation of the picture center align and give the padding.
+In the meanwhile add the break line*/
+.lefttext p{
+  text-align: center;
+  border-bottom: 2px solid #366590;
+  padding-bottom: 10px;
+  font-size: 80%;
+  
+}
+
+/*Give the whole left part(Achived by float left) of Linguistics the border same as the specification.
+And adjust the width*/
+.left{
+  border: 5px double #286796;
+  padding: 10px;
+  margin-right: 20px;
+  float: left;
+  width: 46%;
+}
+
+/*Put the label left to the text without changing the order*/
+.leftlabel img{
+  float: left;
+  padding-right: 10px;
+}
+
+/*Adjust the text size similar to the requirment*/
+.leftlabel p{
+  font-size: 70%;
+}
+
+/*Give certain padding to the right text part to be similar to the requirement.*/
+.righttext{
+  padding-top: 5px;
+  padding-right: 20px;
+}
+
+/*Add the solid circle bullets to the list and keep the list indentation after floating.
+Reference:https://css-tricks.com/forums/topic/float-left-combined-with-bullets-problematic/; */
+.bullet{
+  overflow: hidden;
+  list-style:disc;
+}
+
+/*bsl part------------------------------------------------------------*/
+
+/*Make sure the next part would not float to the previous session with clear:left.
+Add padding on the top*/
+.clear{
+  padding-top: 10px;
+  clear: left;
+}
+
+/*Set the image float right and give certain margin and padding to look the same as specification picture.
+Add a background image to make as it has a border. */
+.bslright{
+  float: right;
+  margin-left: 10px;
+  padding: 20px;
+  background-image: url(http://homepages.cs.ncl.ac.uk/harold.fellermann/csc8004/css/460x320-box.png);
+  background-repeat: no-repeat;
+}
+
+/*Set the annoatation center and font-size 80%.*/
+.bslright p{
+  text-align: center;
+  font-size: 80%;
+}
+
+/*Add abck the bullet */
+.bslleft ul{
+ list-style:disc;
+}
+
+/*letters-----------------------------------------------------------*/
+
+/*Change the color to red on "letters"*/
+.lettercolor{
+  color: #de204f;
+}
+
+/*Set the gesture text center and add border and marigin to the sign to look seperateed sam as the specification picture*/
+.gesture{
+  text-align: center;
+  border: 1px solid #808080;
+  margin:10px;
+}
+
+/*Adjust the font size to samll, set paragraph margin padding and background color.
+Set the text color to white and font-variant to small-caps.*/
+.gesture p{
+  font-size: small;
+  margin: 0px;
+  margin-top: -5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: #004b83;
+  color: #FFFFFF;
+  font-variant: small-caps;
+}
+
+/*Make the picture flexibale and warpped same as the specification*/
+/* CSS 2.1 does not support flex
+.flex{
+  display: flex;
+  flex-wrap: wrap;
+}
+*/
+
+/*Make sign letters dynamically adjust to fill the width.*/
+.flex{
+  display: inline-block;
+}
+
+.flex div{
+  float: left;
+}
+
+/*BSL numbers............................................................*/
+/*Make sign letters dynamically adjust to fill the width.*/
+/* CSS 2.1 does not support flex.
+.flex2{
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 10px;
+}
+*/
+
+/*Set the color of text "Numbers" to red*/
+.number_color{
+  color: #de204f;
+}
+
+/*Make the sign numbers dynamically adjust to fill the width*/
+.flex2{
+  display: inline-block;
+}
+
+.flex2 div{
+  float:left;
+}
+
+/*Set the text align center and add border and margin to the sign and number*/
+.bsln{
+  text-align: center;
+  border: 1px solid #808080;
+  margin: 10px;
+}
+
+/*Set the paragraph text to samll and bold.Set margin, padding background and text color.*/
+.bsln p{
+  font-size: small;
+  font-weight: bold;
+  margin: 0;
+  padding: 8px;
+  background-color: #004b83;
+  color: #FFFFFF;
+}
+
+/*Make Number Sign's first number sink.*/
+/*Css 2.1 does not support the pseudo-element::first-letter;Thus need to add span to each first letter.
+.bsln p::first-letter{
+  font-size: 70%;
+}
+*/
+/*Sink the fist letter*/
+.bsln span{
+  font-size: 70%;
+}
+
+/*Make the bottom fixed at the right-blow corner of the page.*/
+.bottom{
+  position: relative;
+  float: right;
+  padding-right: 10px;
+}
